@@ -1,0 +1,461 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6EA4BA613EF93530CB23DC8B /* Pods_TrainTicketX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0DC2B9995FF30C6884C3318 /* Pods_TrainTicketX.framework */; };
+		DA3B21942365384400775253 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3B21932365384400775253 /* AppDelegate.swift */; };
+		DA3B21962365384400775253 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3B21952365384400775253 /* SceneDelegate.swift */; };
+		DA3B21982365384400775253 /* TicketRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3B21972365384400775253 /* TicketRootView.swift */; };
+		DA3B219A2365384700775253 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA3B21992365384700775253 /* Assets.xcassets */; };
+		DA3B219D2365384700775253 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA3B219C2365384700775253 /* Preview Assets.xcassets */; };
+		DA3B21A02365384700775253 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA3B219E2365384700775253 /* LaunchScreen.storyboard */; };
+		DA3B21A82365679200775253 /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3B21A72365679200775253 /* MainTab.swift */; };
+		DA3B21AA23656AB300775253 /* PersonRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3B21A923656AB300775253 /* PersonRootView.swift */; };
+		DAF246DE2365A4E80017908E /* TrainAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF246DD2365A4E80017908E /* TrainAPI.swift */; };
+		DAF246E62368847D0017908E /* TrainDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF246E52368847D0017908E /* TrainDataCenter.swift */; };
+		DAF246E9236884F40017908E /* TicketList.json in Resources */ = {isa = PBXBuildFile; fileRef = DAF246E8236884F40017908E /* TicketList.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		53FCC48925195B5C5A34149E /* Pods-TrainTicketX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrainTicketX.debug.xcconfig"; path = "Target Support Files/Pods-TrainTicketX/Pods-TrainTicketX.debug.xcconfig"; sourceTree = "<group>"; };
+		A0DC2B9995FF30C6884C3318 /* Pods_TrainTicketX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrainTicketX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBFAFA13A8CF9BB76A3D308E /* Pods-TrainTicketX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrainTicketX.release.xcconfig"; path = "Target Support Files/Pods-TrainTicketX/Pods-TrainTicketX.release.xcconfig"; sourceTree = "<group>"; };
+		DA3B21902365384400775253 /* TrainTicketX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainTicketX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA3B21932365384400775253 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DA3B21952365384400775253 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		DA3B21972365384400775253 /* TicketRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketRootView.swift; sourceTree = "<group>"; };
+		DA3B21992365384700775253 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DA3B219C2365384700775253 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DA3B219F2365384700775253 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DA3B21A12365384700775253 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA3B21A72365679200775253 /* MainTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
+		DA3B21A923656AB300775253 /* PersonRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonRootView.swift; sourceTree = "<group>"; };
+		DAF246DD2365A4E80017908E /* TrainAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainAPI.swift; sourceTree = "<group>"; };
+		DAF246E52368847D0017908E /* TrainDataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainDataCenter.swift; sourceTree = "<group>"; };
+		DAF246E8236884F40017908E /* TicketList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TicketList.json; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DA3B218D2365384400775253 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EA4BA613EF93530CB23DC8B /* Pods_TrainTicketX.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		13F635D2F94CD718099837F6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				53FCC48925195B5C5A34149E /* Pods-TrainTicketX.debug.xcconfig */,
+				CBFAFA13A8CF9BB76A3D308E /* Pods-TrainTicketX.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		2B07479EAEEC03B3C2C42CF5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A0DC2B9995FF30C6884C3318 /* Pods_TrainTicketX.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA3B21872365384400775253 = {
+			isa = PBXGroup;
+			children = (
+				DA3B21922365384400775253 /* TrainTicketX */,
+				DA3B21912365384400775253 /* Products */,
+				13F635D2F94CD718099837F6 /* Pods */,
+				2B07479EAEEC03B3C2C42CF5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DA3B21912365384400775253 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA3B21902365384400775253 /* TrainTicketX.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DA3B21922365384400775253 /* TrainTicketX */ = {
+			isa = PBXGroup;
+			children = (
+				DAF246E7236884900017908E /* Resources */,
+				DA3B21A72365679200775253 /* MainTab.swift */,
+				DA3B21932365384400775253 /* AppDelegate.swift */,
+				DA3B21952365384400775253 /* SceneDelegate.swift */,
+				DA3B21A923656AB300775253 /* PersonRootView.swift */,
+				DA3B21972365384400775253 /* TicketRootView.swift */,
+				DAF246DD2365A4E80017908E /* TrainAPI.swift */,
+				DA3B21992365384700775253 /* Assets.xcassets */,
+				DA3B219E2365384700775253 /* LaunchScreen.storyboard */,
+				DA3B21A12365384700775253 /* Info.plist */,
+				DA3B219B2365384700775253 /* Preview Content */,
+				DAF246E52368847D0017908E /* TrainDataCenter.swift */,
+			);
+			path = TrainTicketX;
+			sourceTree = "<group>";
+		};
+		DA3B219B2365384700775253 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DA3B219C2365384700775253 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DAF246E7236884900017908E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DAF246E8236884F40017908E /* TicketList.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DA3B218F2365384400775253 /* TrainTicketX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA3B21A42365384700775253 /* Build configuration list for PBXNativeTarget "TrainTicketX" */;
+			buildPhases = (
+				ACCDBE2C0D14CB1023675739 /* [CP] Check Pods Manifest.lock */,
+				DA3B218C2365384400775253 /* Sources */,
+				DA3B218D2365384400775253 /* Frameworks */,
+				DA3B218E2365384400775253 /* Resources */,
+				F50D407114A7AD780F8CD87D /* [CP] Embed Pods Frameworks */,
+				909A11A93FA9F6D6DCBEFE7E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TrainTicketX;
+			productName = TrainTicketX;
+			productReference = DA3B21902365384400775253 /* TrainTicketX.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DA3B21882365384400775253 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = Nemo;
+				TargetAttributes = {
+					DA3B218F2365384400775253 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+				};
+			};
+			buildConfigurationList = DA3B218B2365384400775253 /* Build configuration list for PBXProject "TrainTicketX" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DA3B21872365384400775253;
+			productRefGroup = DA3B21912365384400775253 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DA3B218F2365384400775253 /* TrainTicketX */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DA3B218E2365384400775253 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA3B21A02365384700775253 /* LaunchScreen.storyboard in Resources */,
+				DA3B219D2365384700775253 /* Preview Assets.xcassets in Resources */,
+				DA3B219A2365384700775253 /* Assets.xcassets in Resources */,
+				DAF246E9236884F40017908E /* TicketList.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		909A11A93FA9F6D6DCBEFE7E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TrainTicketX/Pods-TrainTicketX-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TrainTicketX/Pods-TrainTicketX-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TrainTicketX/Pods-TrainTicketX-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ACCDBE2C0D14CB1023675739 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TrainTicketX-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F50D407114A7AD780F8CD87D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TrainTicketX/Pods-TrainTicketX-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TrainTicketX/Pods-TrainTicketX-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TrainTicketX/Pods-TrainTicketX-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DA3B218C2365384400775253 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA3B21A82365679200775253 /* MainTab.swift in Sources */,
+				DAF246E62368847D0017908E /* TrainDataCenter.swift in Sources */,
+				DA3B21942365384400775253 /* AppDelegate.swift in Sources */,
+				DA3B21962365384400775253 /* SceneDelegate.swift in Sources */,
+				DAF246DE2365A4E80017908E /* TrainAPI.swift in Sources */,
+				DA3B21982365384400775253 /* TicketRootView.swift in Sources */,
+				DA3B21AA23656AB300775253 /* PersonRootView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DA3B219E2365384700775253 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA3B219F2365384700775253 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DA3B21A22365384700775253 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DA3B21A32365384700775253 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DA3B21A52365384700775253 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53FCC48925195B5C5A34149E /* Pods-TrainTicketX.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"TrainTicketX/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = TrainTicketX/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nemocdz.TrainTicketX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DA3B21A62365384700775253 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBFAFA13A8CF9BB76A3D308E /* Pods-TrainTicketX.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"TrainTicketX/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = TrainTicketX/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nemocdz.TrainTicketX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DA3B218B2365384400775253 /* Build configuration list for PBXProject "TrainTicketX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA3B21A22365384700775253 /* Debug */,
+				DA3B21A32365384700775253 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA3B21A42365384700775253 /* Build configuration list for PBXNativeTarget "TrainTicketX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA3B21A52365384700775253 /* Debug */,
+				DA3B21A62365384700775253 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DA3B21882365384400775253 /* Project object */;
+}
