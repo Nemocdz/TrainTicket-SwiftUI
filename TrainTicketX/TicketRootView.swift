@@ -22,8 +22,11 @@ struct TicketRootView: View {
                 TicketInfoRow()
             }.onAppear {
                 //UITableView.appearance().separatorColor = .clear
-            }.navigationBarTitle("票夹")
-        }
+            }.navigationBarTitle("票夹").navigationBarItems(trailing:
+                NavigationLink (destination: Text("AAAA")) {
+                    Image(systemName: "doc.text.viewfinder").font(.system(size: 25))
+                }
+            )}
     }
 }
 
