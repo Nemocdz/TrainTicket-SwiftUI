@@ -15,11 +15,13 @@ let dataInfos = [DataInfoRowModel(titleText:"总金额", detailText:"0 元"),
 
 
 struct PersonRootView: View {
+    @State var trainLines = [TrainLine]()
+    
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("行程图")) {
-                    Text("aa")
+                    ATrainMapView(trainLines: $trainLines).frame(height: 400)
                 }
                 Section(header: Text("数据")) {
                     ForEach(dataInfos, id: \.self) {

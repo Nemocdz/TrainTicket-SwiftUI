@@ -23,7 +23,7 @@ struct TicketRootView: View {
             }.onAppear {
                 //UITableView.appearance().separatorColor = .clear
             }.navigationBarTitle("票夹").navigationBarItems(trailing:
-                NavigationLink (destination: Text("AAAA")) {
+                NavigationLink (destination: CameraView()) {
                     Image(systemName: "doc.text.viewfinder").font(.system(size: 25))
                 }
             )}

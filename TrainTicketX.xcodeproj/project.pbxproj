@@ -16,7 +16,8 @@
 		DA3B21A02365384700775253 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA3B219E2365384700775253 /* LaunchScreen.storyboard */; };
 		DA3B21A82365679200775253 /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3B21A72365679200775253 /* MainTab.swift */; };
 		DA3B21AA23656AB300775253 /* PersonRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3B21A923656AB300775253 /* PersonRootView.swift */; };
-		DAF246DE2365A4E80017908E /* TrainAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF246DD2365A4E80017908E /* TrainAPI.swift */; };
+		DAF21AD623A7D90300DF9B3A /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF21AD523A7D90300DF9B3A /* CameraView.swift */; };
+		DAF21AE423A7E16000DF9B3A /* TrainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF21AE323A7E15F00DF9B3A /* TrainMapView.swift */; };
 		DAF246E62368847D0017908E /* TrainDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF246E52368847D0017908E /* TrainDataCenter.swift */; };
 		DAF246E9236884F40017908E /* TicketList.json in Resources */ = {isa = PBXBuildFile; fileRef = DAF246E8236884F40017908E /* TicketList.json */; };
 /* End PBXBuildFile section */
@@ -35,7 +36,10 @@
 		DA3B21A12365384700775253 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA3B21A72365679200775253 /* MainTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
 		DA3B21A923656AB300775253 /* PersonRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonRootView.swift; sourceTree = "<group>"; };
-		DAF246DD2365A4E80017908E /* TrainAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainAPI.swift; sourceTree = "<group>"; };
+		DAF21AD523A7D90300DF9B3A /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		DAF21AE323A7E15F00DF9B3A /* TrainMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainMapView.swift; sourceTree = "<group>"; };
+		DAF21AF223A7E2BD00DF9B3A /* TrainTicketX-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TrainTicketX-Bridging-Header.h"; sourceTree = "<group>"; };
+		DAF21AF323A7F58100DF9B3A /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		DAF246E52368847D0017908E /* TrainDataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainDataCenter.swift; sourceTree = "<group>"; };
 		DAF246E8236884F40017908E /* TicketList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TicketList.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,6 +68,7 @@
 		2B07479EAEEC03B3C2C42CF5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DAF21AF323A7F58100DF9B3A /* CoreTelephony.framework */,
 				A0DC2B9995FF30C6884C3318 /* Pods_TrainTicketX.framework */,
 			);
 			name = Frameworks;
@@ -90,13 +95,15 @@
 		DA3B21922365384400775253 /* TrainTicketX */ = {
 			isa = PBXGroup;
 			children = (
+				DAF21AF223A7E2BD00DF9B3A /* TrainTicketX-Bridging-Header.h */,
+				DAF21AE323A7E15F00DF9B3A /* TrainMapView.swift */,
 				DAF246E7236884900017908E /* Resources */,
+				DAF21AD523A7D90300DF9B3A /* CameraView.swift */,
 				DA3B21A72365679200775253 /* MainTab.swift */,
 				DA3B21932365384400775253 /* AppDelegate.swift */,
 				DA3B21952365384400775253 /* SceneDelegate.swift */,
 				DA3B21A923656AB300775253 /* PersonRootView.swift */,
 				DA3B21972365384400775253 /* TicketRootView.swift */,
-				DAF246DD2365A4E80017908E /* TrainAPI.swift */,
 				DA3B21992365384700775253 /* Assets.xcassets */,
 				DA3B219E2365384700775253 /* LaunchScreen.storyboard */,
 				DA3B21A12365384700775253 /* Info.plist */,
@@ -260,9 +267,10 @@
 				DAF246E62368847D0017908E /* TrainDataCenter.swift in Sources */,
 				DA3B21942365384400775253 /* AppDelegate.swift in Sources */,
 				DA3B21962365384400775253 /* SceneDelegate.swift in Sources */,
-				DAF246DE2365A4E80017908E /* TrainAPI.swift in Sources */,
+				DAF21AE423A7E16000DF9B3A /* TrainMapView.swift in Sources */,
 				DA3B21982365384400775253 /* TicketRootView.swift in Sources */,
 				DA3B21AA23656AB300775253 /* PersonRootView.swift in Sources */,
+				DAF21AD623A7D90300DF9B3A /* CameraView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +417,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nemocdz.TrainTicketX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TrainTicketX/TrainTicketX-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -429,6 +438,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nemocdz.TrainTicketX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TrainTicketX/TrainTicketX-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

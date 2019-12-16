@@ -8,6 +8,11 @@
 
 import UIKit
 
+enum UX {
+    static let trainTicketColor = UIColor(red: 255/255, green: 191/255, blue: 206/255, alpha: 1)
+    static let highSpeedTicketColor = UIColor(red: 186/255, green: 232/255, blue: 255/255, alpha: 1)
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        AMapServices.shared().enableHTTPS = true
+        AMapServices.shared().apiKey = AMapService.appKey
         return true
     }
 

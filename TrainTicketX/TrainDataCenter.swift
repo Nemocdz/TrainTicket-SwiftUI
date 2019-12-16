@@ -28,6 +28,10 @@ struct TrainTicket:Decodable {
     let distance:Float
 }
 
+enum AMapService {
+    static let appKey = "5a31783a46b8bb4a70f70dcef8023d0e"
+}
+
 enum OCRService {
     static let accessToken = "24.cfe2fef6fa76cb34d5785af2a81a9fa2.2592000.1574060179.282335-17566606"
     
