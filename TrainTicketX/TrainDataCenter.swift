@@ -8,10 +8,46 @@
 
 import Foundation
 import Combine
+import UIKit
 
 fileprivate let trainListFileName = "TicketList.json"
 
-struct TrainTicket:Decodable {
+enum TrainType:String {
+    case K
+    case Z
+    case C
+    case D
+    case G
+    
+    var speed:Float {
+        switch self {
+            case .K:
+                return 80
+            case .Z:
+                return 100
+            case .C:
+                return 150
+            case .D:
+                return 200
+            case .G:
+                return 300
+        }
+    }
+    
+    var color:UIColor {
+        switch self {
+            case .K, .Z:
+                return UIColor(red: 255/255, green: 191/255, blue: 206/255, alpha: 1)
+            case .C, .D, .G:
+                return UIColor(red: 186/255, green: 232/255, blue: 255/255, alpha: 1)
+        }
+    }
+}
+
+extension TrainType: Codable {
+}
+
+struct TrainTicket:Codable {
     // 车次
     let trainNumber:String
     // 日期
@@ -26,6 +62,8 @@ struct TrainTicket:Decodable {
     let runTime:Int
     // 距离，单位：公里
     let distance:Float
+    // 列车类型
+    let type:TrainType
 }
 
 enum AMapService {
@@ -114,6 +152,19 @@ enum OCRService {
 enum TrainInfoService {
     static let appKey = "9e82d97bdceb4fadbe43e00a7618c1fd"
     
+    /*
+     "train_no": "Z27",
+     "train_type": "直达",
+     "start_station": "上海南",
+     "start_station_type": "始",
+     "end_station": "武昌",
+     "end_station_type": "终",
+     "start_time": "21:02",
+     "end_time": "次日06:35",
+     "run_time": "9小时33分钟",
+     "run_distance": "",
+     "price_list": null
+    */
     struct TrianInfo:Codable {
         var start_station:String?
         var end_station:String?

@@ -8,11 +8,6 @@
 
 import UIKit
 
-enum UX {
-    static let trainTicketColor = UIColor(red: 255/255, green: 191/255, blue: 206/255, alpha: 1)
-    static let highSpeedTicketColor = UIColor(red: 186/255, green: 232/255, blue: 255/255, alpha: 1)
-}
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

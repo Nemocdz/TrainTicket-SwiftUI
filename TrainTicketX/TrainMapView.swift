@@ -11,11 +11,6 @@ import AMapSearchKit
 import AMapFoundationKit
 import SwiftUI
 
-enum TrainType {
-    case normalTrain
-    case highSpeedTrain
-}
-
 struct TrainLine {
     let startStationName:String
     let endStationName:String
@@ -49,7 +44,7 @@ class TrainMapView: UIView {
     var locationPoints = [CLLocationCoordinate2D]()
     var pendingLines = [TrainLine]()
     var isLoading = false
-    var trainType = TrainType.normalTrain
+    var trainType = TrainType.K
     
     var lines:[TrainLine] = [] {
         didSet {
@@ -133,7 +128,7 @@ extension TrainMapView:MAMapViewDelegate {
     func mapView(_ mapView: MAMapView!, rendererFor overlay: MAOverlay!) -> MAOverlayRenderer! {
         if let renderer = MAPolylineRenderer(overlay: overlay) {
             renderer.lineWidth = 3.0
-            renderer.strokeColor = trainType == .highSpeedTrain ? UX.highSpeedTicketColor : UX.trainTicketColor
+            renderer.strokeColor = trainType.color
             return renderer
         }
         return nil
