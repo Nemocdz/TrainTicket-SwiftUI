@@ -21,7 +21,7 @@ struct PersonRootView: View {
                     DataInfoRow(title: "总金额", detail: "\(String(format: "%.1f", dataCenter.tickets.reduce(0, { $0 + $1.money }))) 元")
                     DataInfoRow(title: "最常用路线", detail: "\(rareLine())")
                     DataInfoRow(title: "总公里数", detail: "\(Int(dataCenter.tickets.reduce(0, { $0 + $1.distance }))) 公里")
-                    DataInfoRow(title: "总时长", detail: "\(totalMinute() / (60 * 60)) 天 \(totalMinute() % (60 * 60)) 小时")
+                    DataInfoRow(title: "总时长", detail: "\(totalMinute() / (60 * 60)) 天 \(totalMinute() % (60 * 60) / 60) 小时")
                     DataInfoRow(title: "总行程数", detail: "\(dataCenter.tickets.count) 趟")
                     DataInfoRow(title: "去过的城市数", detail: "\(cityCount()) 个")
                 }

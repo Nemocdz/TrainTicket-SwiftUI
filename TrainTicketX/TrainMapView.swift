@@ -31,11 +31,14 @@ extension TrainMapView: UIViewRepresentable {
     }
 }
 
+fileprivate let chinaCenter = CLLocationCoordinate2D(latitude: 28.42, longitude: 104.21)
+
 class TrainMapUIView: UIView {
     lazy var mapView: MAMapView = {
         let mapView = MAMapView(frame: bounds)
         mapView.zoomLevel = 4
         mapView.delegate = self
+        mapView.centerCoordinate = chinaCenter
         return mapView
     }()
     
