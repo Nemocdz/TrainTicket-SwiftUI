@@ -17,21 +17,21 @@ struct TrainLine {
     let trainType:TrainType
 }
 
-struct ATrainMapView {
-    @Binding var trainLines:[TrainLine]
+struct TrainMapView {
+    @State var trainLines:[TrainLine]
 }
 
-extension ATrainMapView: UIViewRepresentable {
-    func makeUIView(context: UIViewRepresentableContext<ATrainMapView>) -> TrainMapView {
-        TrainMapView()
+extension TrainMapView: UIViewRepresentable {
+    func makeUIView(context: UIViewRepresentableContext<TrainMapView>) -> TrainMapUIView {
+        TrainMapUIView()
     }
     
-    func updateUIView(_ uiView: TrainMapView, context: UIViewRepresentableContext<ATrainMapView>) {
+    func updateUIView(_ uiView: TrainMapUIView, context: UIViewRepresentableContext<TrainMapView>) {
         uiView.lines = trainLines
     }
 }
 
-class TrainMapView: UIView {
+class TrainMapUIView: UIView {
     lazy var mapView: MAMapView = {
         let mapView = MAMapView(frame: bounds)
         mapView.zoomLevel = 4
@@ -66,27 +66,8 @@ class TrainMapView: UIView {
     
     func addLine(_ line:TrainLine) {
         func makeRequest(for stationName:String) -> AMapPOIKeywordsSearchRequest {
-            let cityName:String? = {
-                var name = stationName
-                if name.last == "站" {
-                    name.removeLast()
-                }
-                
-                switch name.last {
-                    case "东","南","西","北":
-                        name.removeLast()
-                    default:break
-                }
-                
-                return name == stationName ? nil : name
-            }()
-            
             let request = AMapPOIKeywordsSearchRequest()
-            
-            if cityName != nil {
-                request.city = cityName!
-            }
-            
+            request.city = TicketUtil.city(from: stationName)
             request.keywords = stationName
             return request
         }
@@ -103,7 +84,7 @@ class TrainMapView: UIView {
     }
 }
 
-extension TrainMapView:AMapSearchDelegate {
+extension TrainMapUIView:AMapSearchDelegate {
     func onPOISearchDone(_ request: AMapPOISearchBaseRequest!, response: AMapPOISearchResponse!) {
         if let poi = response.pois.first {
             let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(poi.location.latitude), longitude: CLLocationDegrees(poi.location.longitude))
@@ -124,7 +105,7 @@ extension TrainMapView:AMapSearchDelegate {
     }
 }
 
-extension TrainMapView:MAMapViewDelegate {
+extension TrainMapUIView:MAMapViewDelegate {
     func mapView(_ mapView: MAMapView!, rendererFor overlay: MAOverlay!) -> MAOverlayRenderer! {
         if let renderer = MAPolylineRenderer(overlay: overlay) {
             renderer.lineWidth = 3.0

@@ -95,20 +95,20 @@
 		DA3B21922365384400775253 /* TrainTicketX */ = {
 			isa = PBXGroup;
 			children = (
-				DAF21AF223A7E2BD00DF9B3A /* TrainTicketX-Bridging-Header.h */,
-				DAF21AE323A7E15F00DF9B3A /* TrainMapView.swift */,
 				DAF246E7236884900017908E /* Resources */,
-				DAF21AD523A7D90300DF9B3A /* CameraView.swift */,
+				DAF21AF223A7E2BD00DF9B3A /* TrainTicketX-Bridging-Header.h */,
 				DA3B21A72365679200775253 /* MainTab.swift */,
-				DA3B21932365384400775253 /* AppDelegate.swift */,
-				DA3B21952365384400775253 /* SceneDelegate.swift */,
+				DAF21AE323A7E15F00DF9B3A /* TrainMapView.swift */,
+				DAF21AD523A7D90300DF9B3A /* CameraView.swift */,
 				DA3B21A923656AB300775253 /* PersonRootView.swift */,
 				DA3B21972365384400775253 /* TicketRootView.swift */,
+				DA3B21932365384400775253 /* AppDelegate.swift */,
+				DA3B21952365384400775253 /* SceneDelegate.swift */,
+				DAF246E52368847D0017908E /* TrainDataCenter.swift */,
 				DA3B21992365384700775253 /* Assets.xcassets */,
 				DA3B219E2365384700775253 /* LaunchScreen.storyboard */,
 				DA3B21A12365384700775253 /* Info.plist */,
 				DA3B219B2365384700775253 /* Preview Content */,
-				DAF246E52368847D0017908E /* TrainDataCenter.swift */,
 			);
 			path = TrainTicketX;
 			sourceTree = "<group>";

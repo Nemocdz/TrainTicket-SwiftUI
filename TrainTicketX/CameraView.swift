@@ -49,11 +49,11 @@ class ImagePickerCoordinator:NSObject {
             }
         }
         .tryFilter {
-            let hasTrainNum = $0.train_num != nil
-            guard hasTrainNum else {
+            let isValid = $0.train_num != nil && $0.ticket_num != nil
+            guard isValid else {
                 throw IdentifyError.OCRError
             }
-            return hasTrainNum
+            return isValid
         }
         .flatMap { ticket in
             TrainInfoService.fetchTrain(num: ticket.train_num!)
@@ -139,8 +139,8 @@ class ImagePickerCoordinator:NSObject {
         let distance:Float = {
             return type.speed * Float(runTime) / 60
         }()
-        
-        return TrainTicket(trainNumber: ticket.train_num ?? "", date: date, startStation: ticket.starting_station ?? "", endStation: ticket.destination_station ?? "", money: money, runTime: runTime, distance: distance, type: type)
+    
+        return TrainTicket(ticketNumber: ticket.ticket_num ?? "", trainNumber: ticket.train_num ?? "", date: date, startStation: ticket.starting_station ?? "", endStation: ticket.destination_station ?? "" , money: money, runTime: runTime, distance: distance, type: type)
     }
 }
 

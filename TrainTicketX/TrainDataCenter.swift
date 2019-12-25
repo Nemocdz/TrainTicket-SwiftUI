@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import SwiftUI
 import UIKit
 
 fileprivate let trainListFileName = "TicketList.json"
@@ -48,6 +49,8 @@ extension TrainType: Codable {
 }
 
 struct TrainTicket:Codable {
+    // 票号
+    let ticketNumber:String
     // 车次
     let trainNumber:String
     // 日期
@@ -64,6 +67,31 @@ struct TrainTicket:Codable {
     let distance:Float
     // 列车类型
     let type:TrainType
+}
+
+enum TicketUtil {
+    static func city(from station:String) -> String {
+        var name = station
+        if name.last == "站" {
+            name.removeLast()
+        }
+        
+        switch name.last {
+            case "东","南","西","北":
+                name.removeLast()
+            default:break
+        }
+        
+        return name
+    }
+    
+    static func string(from date:Date) -> String {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "zh_CN")
+        formatter.dateFormat = "yyyy年MM月dd日"
+        return formatter.string(from: date)
+    }
+    
 }
 
 enum AMapService {
@@ -217,14 +245,18 @@ enum TrainInfoService {
     }
 }
 
-
-
-final class TrainDataCenter {
+final class TrainDataCenter:ObservableObject {
     static let shared = TrainDataCenter()
     
-    @Published var tickets:[TrainTicket]
+    var didChange = PassthroughSubject<TrainDataCenter, Never>()
+    
+    var tickets:[TrainTicket] = load(trainListFileName) {
+        didSet {
+            didChange.send(self)
+        }
+    }
+    
     private init() {
-        tickets = load(trainListFileName)
     }
 }
 

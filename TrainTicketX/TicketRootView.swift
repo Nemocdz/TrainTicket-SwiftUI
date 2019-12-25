@@ -8,18 +8,13 @@
 
 import SwiftUI
 
-struct Model:Identifiable {
-    let num:Int
-    var id:Int { num }
-}
-
-let models = [Model(num: 1), Model(num: 2), Model(num: 3)]
-
 struct TicketRootView: View {
+    @ObservedObject var dataCenter = TrainDataCenter.shared
+    
     var body: some View {
         NavigationView {
-            List(models) { _ in
-                TicketInfoRow()
+            List(dataCenter.tickets) {
+                TicketInfoRow(ticket: $0)
             }.onAppear {
                 //UITableView.appearance().separatorColor = .clear
             }.navigationBarTitle("票夹").navigationBarItems(trailing:
@@ -30,6 +25,12 @@ struct TicketRootView: View {
     }
 }
 
+extension TrainTicket:Identifiable {
+    var id:String {
+        ticketNumber
+    }
+}
+
 struct TicketRootView_Previews: PreviewProvider {
     static var previews: some View {
         TicketRootView()
@@ -37,27 +38,30 @@ struct TicketRootView_Previews: PreviewProvider {
 }
 
 struct TicketInfoRow: View {
+    @State var ticket:TrainTicket
+    
     var body: some View {
         VStack(alignment: .leading) {
             VStack {
                 HStack {
-                      Text("广州东").font(.system(size: 18))
-                      Spacer()
-                      Text("深圳北").font(.system(size: 18))
-                  }
-                  Text("C7071").font(.system(size: 16))
+                    Text(ticket.startStation).font(.system(size: 18))
+                    Spacer()
+                    Text(ticket.endStation).font(.system(size: 18))
+                }
+                Text(ticket.trainNumber).font(.system(size: 16))
             }
-            Text("2019年7月18日").font(.system(size: 15))
+            Text(TicketUtil.string(from: ticket.date)).font(.system(size: 15))
             Spacer()
             HStack {
-                Text("¥79.5元").font(.system(size: 15))
+                Text("¥\(String(format: "%.1f", ticket.money))元").font(.system(size: 15))
                 Spacer()
                 Button(action: {
-                    
+                    /// TODO: share
+                    print("share")
                 }) {
                     Image(systemName: "square.and.arrow.up").font(.system(size: 25)).frame(width: 25, height: 32).foregroundColor(.white)
                 }
             }
-        }.frame(height: 200).padding(20).background(Color.blue).cornerRadius(10)
+        }.frame(height: 200).padding(20).background(Color(ticket.type.color)).cornerRadius(10)
     }
 }
