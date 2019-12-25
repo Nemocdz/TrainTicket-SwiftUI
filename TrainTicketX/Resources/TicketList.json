@@ -1,2 +1,13 @@
 [
+    {
+        "ticketNumber": "001",
+        "trainNumber": "G81",
+        "date": 519751611,
+        "startStation": "广州南站",
+        "endStation": "北京西站",
+        "money": 512.3,
+        "runTime": 600,
+        "distance": 2392.2,
+        "type": "G"
+    }
 ]
