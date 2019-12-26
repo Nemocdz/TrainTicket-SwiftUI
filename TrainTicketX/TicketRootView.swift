@@ -9,7 +9,8 @@
 import SwiftUI
 
 struct TicketRootView: View {
-    @ObservedObject var dataCenter = TrainDataCenter.shared
+    @ObservedObject var dataCenter = DataCenter.shared
+    @State var isModalShow = false
     
     var body: some View {
         NavigationView {
@@ -18,9 +19,15 @@ struct TicketRootView: View {
             }.onAppear {
                 //UITableView.appearance().separatorColor = .clear
             }.navigationBarTitle("票夹").navigationBarItems(trailing:
-                NavigationLink (destination: CameraView()) {
+                Button(action: {
+                    self.isModalShow = true
+                }, label: {
                     Image(systemName: "doc.text.viewfinder").font(.system(size: 25))
-                }
+                }).sheet(isPresented: $isModalShow, content: {
+                    CameraRootView(didDismiss: {
+                        self.isModalShow = false
+                    })
+                })
             )}
     }
 }
@@ -44,22 +51,22 @@ struct TicketInfoRow: View {
         VStack(alignment: .leading) {
             VStack {
                 HStack {
-                    Text(ticket.startStation).font(.system(size: 18))
+                    Text(ticket.startStation).font(.system(size: 18)).foregroundColor(.black)
                     Spacer()
-                    Text(ticket.endStation).font(.system(size: 18))
+                    Text(ticket.endStation).font(.system(size: 18)).foregroundColor(.black)
                 }
-                Text(ticket.trainNumber).font(.system(size: 16))
+                Text(ticket.trainNumber).font(.system(size: 16)).foregroundColor(.black)
             }
-            Text(TicketUtil.string(from: ticket.date)).font(.system(size: 15))
+            Text(TicketHelper.string(from: ticket.date)).font(.system(size: 15)).foregroundColor(.black)
             Spacer()
             HStack {
-                Text("¥\(String(format: "%.1f", ticket.money))元").font(.system(size: 15))
+                Text("¥\(String(format: "%.1f", ticket.money))元").font(.system(size: 15)).foregroundColor(.black)
                 Spacer()
                 Button(action: {
                     /// TODO: share
                     print("share")
                 }) {
-                    Image(systemName: "square.and.arrow.up").font(.system(size: 25)).frame(width: 25, height: 32).foregroundColor(.white)
+                    Image(systemName: "square.and.arrow.up").font(.system(size: 25)).frame(width: 25, height: 32).foregroundColor(.black)
                 }
             }
         }.frame(height: 200).padding(20).background(Color(ticket.type.color)).cornerRadius(10)

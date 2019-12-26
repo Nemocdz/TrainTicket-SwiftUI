@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct PersonRootView: View {
-    @ObservedObject var dataCenter = TrainDataCenter.shared
+    @ObservedObject var dataCenter = DataCenter.shared
     
     var body: some View {
         NavigationView {
@@ -32,8 +32,8 @@ struct PersonRootView: View {
     func cityCount() -> Int {
         var citys = Set<String>()
         dataCenter.tickets.forEach {
-            citys.insert(TicketUtil.city(from: $0.startStation))
-            citys.insert(TicketUtil.city(from: $0.endStation))
+            citys.insert(TicketHelper.city(from: $0.startStation))
+            citys.insert(TicketHelper.city(from: $0.endStation))
         }
         return citys.count
     }
@@ -41,7 +41,7 @@ struct PersonRootView: View {
     func rareLine() -> String {
         var map = [String: Int]()
         dataCenter.tickets.forEach {
-            let line = "\(TicketUtil.city(from: $0.startStation))-\(TicketUtil.city(from: $0.endStation))"
+            let line = "\(TicketHelper.city(from: $0.startStation))-\(TicketHelper.city(from: $0.endStation))"
             if let value = map[line] {
                 map[line] = value + 1
             } else {

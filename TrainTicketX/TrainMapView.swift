@@ -70,7 +70,7 @@ class TrainMapUIView: UIView {
     func addLine(_ line:TrainLine) {
         func makeRequest(for stationName:String) -> AMapPOIKeywordsSearchRequest {
             let request = AMapPOIKeywordsSearchRequest()
-            request.city = TicketUtil.city(from: stationName)
+            request.city = TicketHelper.city(from: stationName)
             request.keywords = stationName
             return request
         }
