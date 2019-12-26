@@ -34,6 +34,7 @@ struct CameraRootView: View {
                 if $0 {
                     self.didDismiss()
                 }
+                self.isShut = false
             }).background(Color.black)
             HStack {
                 Spacer()
