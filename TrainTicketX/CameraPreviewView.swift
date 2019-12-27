@@ -11,6 +11,7 @@ import AVFoundation
 import Photos
 import SwiftUI
 import Toast_Swift
+import Combine
 
 struct CameraPreviewView {
     @Binding var isShut:Bool
@@ -18,11 +19,14 @@ struct CameraPreviewView {
 }
 
 extension CameraPreviewView: UIViewRepresentable {
+    func makeCoordinator() -> Coordinator {
+        Coordinator()
+    }
+    
     func updateUIView(_ uiView: CameraPreviewUIView, context: UIViewRepresentableContext<CameraPreviewView>) {
         if isShut {
             uiView.makeToastActivity(.center)
             uiView.shutPhoto {
-                uiView.hideToastActivity()
                 switch $0 {
                     case .success(let data):
                         if let image = UIImage(data: data) {
@@ -35,14 +39,19 @@ extension CameraPreviewView: UIViewRepresentable {
                             }
                         }
                         
-                        let _ = ImageHelper.identify(imageData: data).sink(receiveCompletion: { error in
-                            print(error)
-                            self.didIdentify(false)
-                        }) { ticket in
-                            DataCenter.shared.tickets.append(ticket)
-                            self.didIdentify(true)
-                        }
+                        context.coordinator.cancellable = ImageHelper.identify(imageData: data)
+                            .receive(on: DispatchQueue.main)
+                            .sink(receiveCompletion: { error in
+                                uiView.hideToastActivity()
+                                print(error)
+                                self.didIdentify(false)
+                            }) { ticket in
+                                uiView.hideToastActivity()
+                                DataCenter.shared.tickets.append(ticket)
+                                self.didIdentify(true)
+                            }
                     case .failure(let error):
+                        uiView.hideToastActivity()
                         print(error)
                         self.didIdentify(false)
                 }
@@ -52,6 +61,10 @@ extension CameraPreviewView: UIViewRepresentable {
     
     func makeUIView(context: UIViewRepresentableContext<CameraPreviewView>) -> CameraPreviewUIView {
         CameraPreviewUIView()
+    }
+    
+    class Coordinator {
+        var cancellable:AnyCancellable?
     }
 }
 

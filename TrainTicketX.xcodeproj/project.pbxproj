@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6EA4BA613EF93530CB23DC8B /* Pods_TrainTicketX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0DC2B9995FF30C6884C3318 /* Pods_TrainTicketX.framework */; };
+		BA2E561623B5B8CB005C5DF0 /* PhotoLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2E561523B5B8CB005C5DF0 /* PhotoLibraryView.swift */; };
+		BA2E561823B5C547005C5DF0 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA2E561723B5C547005C5DF0 /* 2.jpg */; };
 		DA0D702123B518C2008980FB /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0D702023B518C2008980FB /* CameraPreviewView.swift */; };
 		DA0D702323B525E5008980FB /* CameraRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0D702223B525E5008980FB /* CameraRootView.swift */; };
 		DA0D703423B537AC008980FB /* OCRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0D703323B537AC008980FB /* OCRService.swift */; };
@@ -32,6 +34,8 @@
 /* Begin PBXFileReference section */
 		53FCC48925195B5C5A34149E /* Pods-TrainTicketX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrainTicketX.debug.xcconfig"; path = "Target Support Files/Pods-TrainTicketX/Pods-TrainTicketX.debug.xcconfig"; sourceTree = "<group>"; };
 		A0DC2B9995FF30C6884C3318 /* Pods_TrainTicketX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrainTicketX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA2E561523B5B8CB005C5DF0 /* PhotoLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryView.swift; sourceTree = "<group>"; };
+		BA2E561723B5C547005C5DF0 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		CBFAFA13A8CF9BB76A3D308E /* Pods-TrainTicketX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrainTicketX.release.xcconfig"; path = "Target Support Files/Pods-TrainTicketX/Pods-TrainTicketX.release.xcconfig"; sourceTree = "<group>"; };
 		DA0D702023B518C2008980FB /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
 		DA0D702223B525E5008980FB /* CameraRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraRootView.swift; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 				DA3B21A72365679200775253 /* MainTab.swift */,
 				DAF21AE323A7E15F00DF9B3A /* TrainMapView.swift */,
 				DA0D702223B525E5008980FB /* CameraRootView.swift */,
+				BA2E561523B5B8CB005C5DF0 /* PhotoLibraryView.swift */,
 				DA3B21A923656AB300775253 /* PersonRootView.swift */,
 				DA3B21972365384400775253 /* TicketRootView.swift */,
 				DA0D702023B518C2008980FB /* CameraPreviewView.swift */,
@@ -161,6 +166,7 @@
 		DAF246E7236884900017908E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BA2E561723B5C547005C5DF0 /* 2.jpg */,
 				DAF246E8236884F40017908E /* TicketList.json */,
 			);
 			path = Resources;
@@ -229,6 +235,7 @@
 			files = (
 				DA3B21A02365384700775253 /* LaunchScreen.storyboard in Resources */,
 				DA3B219D2365384700775253 /* Preview Assets.xcassets in Resources */,
+				BA2E561823B5C547005C5DF0 /* 2.jpg in Resources */,
 				DA3B219A2365384700775253 /* Assets.xcassets in Resources */,
 				DAF246E9236884F40017908E /* TicketList.json in Resources */,
 			);
@@ -311,6 +318,7 @@
 				DA0D702323B525E5008980FB /* CameraRootView.swift in Sources */,
 				DA0D703423B537AC008980FB /* OCRService.swift in Sources */,
 				DA3B21982365384400775253 /* TicketRootView.swift in Sources */,
+				BA2E561623B5B8CB005C5DF0 /* PhotoLibraryView.swift in Sources */,
 				DA0D703623B537E1008980FB /* TrainInfoService.swift in Sources */,
 				DA3B21AA23656AB300775253 /* PersonRootView.swift in Sources */,
 				DA0D702123B518C2008980FB /* CameraPreviewView.swift in Sources */,
@@ -451,6 +459,7 @@
 			baseConfigurationReference = 53FCC48925195B5C5A34149E /* Pods-TrainTicketX.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"TrainTicketX/Preview Content\"";
 				DEVELOPMENT_TEAM = 8HQ2P3SCVF;
@@ -462,6 +471,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nemocdz.TrainTicketX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "TrainTicketX/TrainTicketX-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -473,6 +483,7 @@
 			baseConfigurationReference = CBFAFA13A8CF9BB76A3D308E /* Pods-TrainTicketX.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"TrainTicketX/Preview Content\"";
 				DEVELOPMENT_TEAM = 8HQ2P3SCVF;
@@ -484,6 +495,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nemocdz.TrainTicketX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "TrainTicketX/TrainTicketX-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

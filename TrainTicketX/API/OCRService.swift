@@ -59,7 +59,7 @@ enum OCRService {
         }
         .map { value -> URLRequest in
             var request = URLRequest(url: URL(string: "https://aip.baidubce.com/rest/2.0/ocr/v1/train_ticket?access_token=\(accessToken)")!)
-            request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+            request.setValue("application/x-www-form-urlencoded; charset=utf-8", forHTTPHeaderField: "Content-Type")
             request.httpMethod = "POST"
             request.httpBody = "image=\(value)".data(using: .utf8)
             return request

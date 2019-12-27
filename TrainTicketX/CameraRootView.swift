@@ -10,6 +10,7 @@ import SwiftUI
 
 struct CameraRootView: View {
     @State var isShut = false
+    @State var isModalShow = false
     
     var didDismiss: () -> ()
     
@@ -26,13 +27,21 @@ struct CameraRootView: View {
                 }
                 Spacer()
                 Button(action: {
-                    /// TODO: open library
+                    self.isModalShow = true
                 }) {
                     Image(systemName: "photo")
                         .font(.system(size: 25))
                         .frame(width: 25, height: 25)
                         .foregroundColor(.black)
                 }
+                .sheet(isPresented: $isModalShow, content: {
+                    PhotoLibraryView { isIdentify in
+                        self.isModalShow = false
+                        if isIdentify {
+                            self.didDismiss()
+                        }
+                    }
+                })
             }
             .padding(.horizontal, 20)
             .padding(.vertical, 10)
