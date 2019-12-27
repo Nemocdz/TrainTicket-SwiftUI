@@ -7,20 +7,13 @@
 //
 
 import UIKit
-import Combine
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var c:AnyCancellable?
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         AMapService.start()
-        
-        let data = try! Data(contentsOf: Bundle.main.url(forResource: "2.jpg", withExtension: nil)!)
-        
-        c = OCRService.fetchTicket(imageData: data).sink(receiveCompletion: {_ in }, receiveValue: {_ in })
         return true
     }
 

@@ -59,9 +59,9 @@ enum OCRService {
         }
         .map { value -> URLRequest in
             var request = URLRequest(url: URL(string: "https://aip.baidubce.com/rest/2.0/ocr/v1/train_ticket?access_token=\(accessToken)")!)
-            request.setValue("application/x-www-form-urlencoded; charset=utf-8", forHTTPHeaderField: "Content-Type")
+            request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
             request.httpMethod = "POST"
-            request.httpBody = "image=\(value)".data(using: .utf8)
+            request.httpBody = "image=\(escape(value))".data(using: .utf8)
             return request
         }
         .flatMap {
@@ -86,4 +86,18 @@ enum OCRService {
         }
         .eraseToAnyPublisher()
     }
+    
+    static func escape(_ string: String) -> String {
+        string.replacingOccurrences(of: "\n", with: "\r\n")
+            .addingPercentEncoding(withAllowedCharacters: URLQueryAllowed) ?? string
+            .replacingOccurrences(of: " ", with: "+")
+    }
+    
+    static let URLQueryAllowed: CharacterSet = {
+        let generalDelimitersToEncode = ":#[]@" // does not include "?" or "/" due to RFC 3986 - Section 3.4
+        let subDelimitersToEncode = "!$&'()*+,;="
+        let encodableDelimiters = CharacterSet(charactersIn: "\(generalDelimitersToEncode)\(subDelimitersToEncode)")
+        return CharacterSet.urlQueryAllowed.subtracting(encodableDelimiters)
+    }()
 }
+
