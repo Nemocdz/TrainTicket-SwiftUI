@@ -56,7 +56,7 @@ enum ImageHelper {
                 return 0
             }
             
-            return Float(moneyString.filter { $0.isNumber }) ?? 0
+            return Float(moneyString.filter { $0.isNumber || $0 == "." }) ?? 0
         }()
         
         let date:Date = {

@@ -72,7 +72,7 @@ final class DataCenter:ObservableObject {
     
     var didChange = PassthroughSubject<DataCenter, Never>()
     
-    var tickets:[TrainTicket] = FileHelper.read(from: DataCenter.fileName) {
+    var tickets:[TrainTicket] = FileHelper.read(from: DataCenter.fileName) ?? [] {
         didSet {
             didChange.send(self)
             DispatchQueue.global().async {
@@ -82,7 +82,26 @@ final class DataCenter:ObservableObject {
     }
     
     private init() {
+        #if DEBUG
+        if tickets.isEmpty{
+            tickets = mockData
+        }
+        #endif
     }
+    
+    var mockData:[TrainTicket] {
+        guard let fileURL = Bundle.main.url(forResource: DataCenter.fileName, withExtension: nil) else {
+            return []
+        }
+        do {
+            let data = try Data(contentsOf: fileURL)
+            return try JSONDecoder().decode([TrainTicket].self, from: data)
+        } catch {
+            print(error)
+        }
+        return []
+    }
+    
 }
 
 
