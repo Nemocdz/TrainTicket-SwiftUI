@@ -51,6 +51,7 @@ struct TicketRootView_Previews: PreviewProvider {
 
 struct TicketInfoRow: View {
     @State var ticket:TrainTicket
+    @State var isModalShow = false
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -78,13 +79,15 @@ struct TicketInfoRow: View {
                     .foregroundColor(.black)
                 Spacer()
                 Button(action: {
-                    /// TODO: share
-                    print("share")
+                    self.isModalShow = true
                 }) {
                     Image(systemName: "square.and.arrow.up")
                         .font(.system(size: 25))
                         .frame(width: 25, height: 32)
                         .foregroundColor(.black)
+                }
+                .sheet(isPresented: $isModalShow) {
+                    ShareView()
                 }
             }
         }
