@@ -11,46 +11,40 @@ import Combine
 
 enum ImageHelper {
     enum IdentifyError:Error {
-        case unknown
-        case OCRError
-        case trainInfoError
+        case noTrainNum
+        case noTicketNum
+        case OCRError(reason: OCRService.APIError)
     }
     
     static func identify(imageData:Data) -> AnyPublisher<TrainTicket, IdentifyError> {
         OCRService.fetchTicket(imageData: imageData)
-        .mapError { error -> IdentifyError in
-            switch error {
-            case .unknown: return IdentifyError.unknown
-            default:
-                print(error)
-                return IdentifyError.OCRError
-            }
+        .mapError {
+            IdentifyError.OCRError(reason: $0)
         }
         .tryFilter {
-            let isValid = $0.train_num != nil && $0.ticket_num != nil
-            guard isValid else {
-                throw IdentifyError.OCRError
+            if $0.train_num == nil {
+                throw IdentifyError.noTrainNum
             }
-            return isValid
+            
+            if $0.ticket_num == nil {
+                throw IdentifyError.noTicketNum
+            }
+            return true
+        }
+        .mapError{
+            $0 as! IdentifyError
         }
         .flatMap { ticket in
             TrainInfoService.fetchTrain(num: ticket.train_num!)
+            .catch{ _ in
+                Just(TrainInfoService.TrianInfo())
+                    .setFailureType(to: TrainInfoService.APIError.self)
+                    .eraseToAnyPublisher()
+            }
+            .assertNoFailure()
+            .setFailureType(to: IdentifyError.self)
             .map{ train in
                 createTrainTicket(from: ticket, train)
-            }
-            .mapError { error -> IdentifyError in
-                switch error {
-                case .unknown: return IdentifyError.unknown
-                default:
-                    print(error)
-                    return IdentifyError.trainInfoError
-                }
-            }
-        }
-        .mapError {
-            switch $0 {
-            case let error as IdentifyError: return error
-            default: return IdentifyError.unknown
             }
         }
         .eraseToAnyPublisher()
