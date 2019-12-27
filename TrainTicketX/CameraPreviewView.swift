@@ -55,7 +55,6 @@ extension CameraPreviewView: UIViewRepresentable {
     }
 }
 
-
 class CameraPreviewUIView: UIView {
     lazy var cameraLayer:AVCaptureVideoPreviewLayer = {
         let layer = AVCaptureVideoPreviewLayer(session: session)
@@ -92,7 +91,6 @@ class CameraPreviewUIView: UIView {
                 print(error)
             }
         }
-
     }
     
     required init?(coder: NSCoder) {

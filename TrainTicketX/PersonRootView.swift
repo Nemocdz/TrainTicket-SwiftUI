@@ -15,7 +15,8 @@ struct PersonRootView: View {
         NavigationView {
             Form {
                 Section(header: Text("行程图")) {
-                    TrainMapView(trainLines: dataCenter.tickets.map{ TrainLine(startStationName: $0.startStation, endStationName: $0.endStation, trainType: $0.type) } ).frame(height: 400)
+                    TrainMapView(trainLines: dataCenter.tickets.map{ TrainLine(startStationName: $0.startStation, endStationName: $0.endStation, trainType: $0.type) })
+                        .frame(height: 400)
                 }
                 Section(header: Text("数据")) {
                     DataInfoRow(title: "总金额", detail: "\(String(format: "%.1f", dataCenter.tickets.reduce(0, { $0 + $1.money }))) 元")
@@ -25,7 +26,8 @@ struct PersonRootView: View {
                     DataInfoRow(title: "总行程数", detail: "\(dataCenter.tickets.count) 趟")
                     DataInfoRow(title: "去过的城市数", detail: "\(cityCount()) 个")
                 }
-            }.navigationBarTitle("汇总")
+            }
+            .navigationBarTitle("汇总")
         }
     }
     

@@ -19,13 +19,19 @@ struct CameraRootView: View {
                 Button(action: {
                     self.didDismiss()
                 }) {
-                    Image(systemName: "xmark").font(.system(size: 25)).frame(width: 25, height: 25).foregroundColor(.black)
+                    Image(systemName: "xmark")
+                        .font(.system(size: 25))
+                        .frame(width: 25, height: 25)
+                        .foregroundColor(.black)
                 }
                 Spacer()
                 Button(action: {
                     /// TODO: open library
                 }) {
-                    Image(systemName: "photo").font(.system(size: 25)).frame(width: 25, height: 25).foregroundColor(.black)
+                    Image(systemName: "photo")
+                        .font(.system(size: 25))
+                        .frame(width: 25, height: 25)
+                        .foregroundColor(.black)
                 }
             }
             .padding(.horizontal, 20)
@@ -35,13 +41,17 @@ struct CameraRootView: View {
                     self.didDismiss()
                 }
                 self.isShut = false
-            }).background(Color.black)
+            })
+            .background(Color.black)
             HStack {
                 Spacer()
                 Button(action: {
                     self.isShut = true
                 }) {
-                    Image(systemName: "camera.circle").font(.system(size: 80)).frame(width: 80, height: 80).foregroundColor(.black)
+                    Image(systemName: "camera.circle")
+                        .font(.system(size: 80))
+                        .frame(width: 80, height: 80)
+                        .foregroundColor(.black)
                 }
                 Spacer()
             }
