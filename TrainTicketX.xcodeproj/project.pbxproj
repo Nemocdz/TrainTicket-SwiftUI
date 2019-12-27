@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		6EA4BA613EF93530CB23DC8B /* Pods_TrainTicketX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0DC2B9995FF30C6884C3318 /* Pods_TrainTicketX.framework */; };
 		BA2E561623B5B8CB005C5DF0 /* PhotoLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2E561523B5B8CB005C5DF0 /* PhotoLibraryView.swift */; };
-		BA2E561823B5C547005C5DF0 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA2E561723B5C547005C5DF0 /* 2.jpg */; };
+		BA2E561823B5C547005C5DF0 /* MockTIcket.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA2E561723B5C547005C5DF0 /* MockTIcket.jpg */; };
 		BA7E26D523B5FEAE0079286E /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7E26D423B5FEAE0079286E /* ShareView.swift */; };
 		DA0D702123B518C2008980FB /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0D702023B518C2008980FB /* CameraPreviewView.swift */; };
 		DA0D702323B525E5008980FB /* CameraRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0D702223B525E5008980FB /* CameraRootView.swift */; };
@@ -36,7 +36,7 @@
 		53FCC48925195B5C5A34149E /* Pods-TrainTicketX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrainTicketX.debug.xcconfig"; path = "Target Support Files/Pods-TrainTicketX/Pods-TrainTicketX.debug.xcconfig"; sourceTree = "<group>"; };
 		A0DC2B9995FF30C6884C3318 /* Pods_TrainTicketX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrainTicketX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA2E561523B5B8CB005C5DF0 /* PhotoLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryView.swift; sourceTree = "<group>"; };
-		BA2E561723B5C547005C5DF0 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		BA2E561723B5C547005C5DF0 /* MockTIcket.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MockTIcket.jpg; sourceTree = "<group>"; };
 		BA7E26D423B5FEAE0079286E /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		CBFAFA13A8CF9BB76A3D308E /* Pods-TrainTicketX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrainTicketX.release.xcconfig"; path = "Target Support Files/Pods-TrainTicketX/Pods-TrainTicketX.release.xcconfig"; sourceTree = "<group>"; };
 		DA0D702023B518C2008980FB /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
@@ -169,7 +169,7 @@
 		DAF246E7236884900017908E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BA2E561723B5C547005C5DF0 /* 2.jpg */,
+				BA2E561723B5C547005C5DF0 /* MockTIcket.jpg */,
 				DAF246E8236884F40017908E /* TicketList.json */,
 			);
 			path = Resources;
@@ -238,7 +238,7 @@
 			files = (
 				DA3B21A02365384700775253 /* LaunchScreen.storyboard in Resources */,
 				DA3B219D2365384700775253 /* Preview Assets.xcassets in Resources */,
-				BA2E561823B5C547005C5DF0 /* 2.jpg in Resources */,
+				BA2E561823B5C547005C5DF0 /* MockTIcket.jpg in Resources */,
 				DA3B219A2365384700775253 /* Assets.xcassets in Resources */,
 				DAF246E9236884F40017908E /* TicketList.json in Resources */,
 			);
