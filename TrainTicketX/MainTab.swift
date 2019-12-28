@@ -11,13 +11,15 @@ import SwiftUI
 struct MainTab: View {
     var body: some View {
         TabView {
-            TicketRootView().tabItem {
-                Image(systemName: "tray.full")
-                    .font(.system(size:25))
+            TicketRootView()
+                .tabItem {
+                    Image(systemName: "tray.full")
+                        .font(.system(size:25))
             }
-            PersonRootView().tabItem {
-                Image(systemName: "person")
-                    .font(.system(size: 25))
+            PersonRootView()
+                .tabItem {
+                    Image(systemName: "person")
+                        .font(.system(size: 25))
             }
         }
     }

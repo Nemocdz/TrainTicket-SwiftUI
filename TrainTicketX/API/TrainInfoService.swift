@@ -39,7 +39,6 @@ enum TrainInfoService {
     }
     
     enum APIError:Error {
-        case unknown
         case networkError(Error)
         case resultError
         case decodeError
@@ -47,31 +46,31 @@ enum TrainInfoService {
     
     static func fetchTrain(num:String) -> AnyPublisher<TrianInfo, APIError> {
         Just(num)
-        .setFailureType(to: Error.self)
+        .setFailureType(to: APIError.self)
         .map { value -> URLRequest in
             var request = URLRequest(url: URL(string: "http://api.avatardata.cn/Train/QueryByTrain?key=\(appKey)&train=\(value)")!)
             request.httpMethod = "GET"
             return request
         }
         .flatMap {
-            URLSession.shared.dataTaskPublisher(for: $0).mapError { error -> Error in
-                APIError.networkError(error)
+            URLSession.shared.dataTaskPublisher(for: $0)
+                .mapError {
+                    APIError.networkError($0)
             }
         }
         .map { $0.data }
         .decode(type: TrainResult.self, decoder: JSONDecoder())
+        .mapError { _ in
+            APIError.decodeError
+        }
         .tryMap {
             guard let result = $0.result else {
                 throw APIError.resultError
             }
             return result
         }
-        .mapError {
-            switch $0 {
-            case let error as APIError: return error
-            case is DecodingError: return APIError.decodeError
-            default: return APIError.unknown
-            }
+        .mapError{
+            $0 as! APIError
         }
         .eraseToAnyPublisher()
     }

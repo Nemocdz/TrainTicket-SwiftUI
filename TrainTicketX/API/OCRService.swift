@@ -57,6 +57,9 @@ enum OCRService {
             }
             return value
         }
+        .mapError {
+            $0 as! APIError
+        }
         .map { value -> URLRequest in
             var request = URLRequest(url: URL(string: "https://aip.baidubce.com/rest/2.0/ocr/v1/train_ticket?access_token=\(accessToken)")!)
             request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
@@ -65,12 +68,16 @@ enum OCRService {
             return request
         }
         .flatMap {
-            URLSession.shared.dataTaskPublisher(for: $0).mapError { error -> Error in
-                APIError.networkError(error)
+            URLSession.shared.dataTaskPublisher(for: $0)
+                .mapError {
+                    APIError.networkError($0)
             }
         }
         .map { $0.data }
         .decode(type: OCRResult.self, decoder: JSONDecoder())
+        .mapError { _ in
+            APIError.decodeError
+        }
         .tryMap {
             guard let result = $0.words_result else {
                 throw APIError.resultError(code: $0.error_code ?? -1, message: $0.error_msg ?? "unknown")
@@ -78,11 +85,7 @@ enum OCRService {
             return result
         }
         .mapError {
-            switch $0 {
-            case let error as APIError: return error
-            case is DecodingError: return APIError.decodeError
-            default: return APIError.unknown
-            }
+            $0 as! APIError
         }
         .eraseToAnyPublisher()
     }
