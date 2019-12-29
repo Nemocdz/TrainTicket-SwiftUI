@@ -70,11 +70,8 @@ final class DataCenter:ObservableObject {
     static let shared = DataCenter()
     private static let fileName = "TicketList.json"
     
-    var didChange = PassthroughSubject<DataCenter, Never>()
-    
-    var tickets:[TrainTicket] = FileHelper.read(from: DataCenter.fileName) ?? [] {
+    @Published var tickets:[TrainTicket] = FileHelper.read(from: DataCenter.fileName) ?? [] {
         didSet {
-            didChange.send(self)
             DispatchQueue.global().async {
                 FileHelper.write(self.tickets, to: DataCenter.fileName)
             }
