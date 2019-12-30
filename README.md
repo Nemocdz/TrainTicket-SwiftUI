@@ -25,7 +25,7 @@
 
 ## Article
 
-[SwitUI 初探]([https://nemocdz.github.io/post/swift-ui-%E5%88%9D%E6%8E%A2/](https://nemocdz.github.io/post/swift-ui-初探/))
+[SwitUI 初探](https://nemocdz.github.io/post/swift-ui-初探/)
 
 ## Author
 
