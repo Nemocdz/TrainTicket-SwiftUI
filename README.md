@@ -19,7 +19,9 @@
 
 ## Screenshots
 
-<img src="https://image-1252104468.cos.ap-guangzhou.myqcloud.com/blog/IMG_1670.PNG" style="zoom:25%;" /><img src="https://image-1252104468.cos.ap-guangzhou.myqcloud.com/blog/IMG_1671.PNG" style="zoom:25%;" /><img src="https://image-1252104468.cos.ap-guangzhou.myqcloud.com/blog/IMG_1672.PNG" style="zoom:25%;" />
+![](https://image-1252104468.cos.ap-guangzhou.myqcloud.com/blog/IMG_1670.PNG)
+![](https://image-1252104468.cos.ap-guangzhou.myqcloud.com/blog/IMG_1671.PNG)
+![](https://image-1252104468.cos.ap-guangzhou.myqcloud.com/blog/IMG_1672.PNG)
 
 ## Article
 
