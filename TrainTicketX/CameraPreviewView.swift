@@ -44,6 +44,7 @@ extension CameraPreviewView: UIViewRepresentable {
                             .sink(receiveCompletion: { error in
                                 uiView.hideToastActivity()
                                 print(error)
+                                /// TODO: show error toast
                                 self.didIdentify(false)
                             }) { ticket in
                                 uiView.hideToastActivity()
@@ -53,6 +54,7 @@ extension CameraPreviewView: UIViewRepresentable {
                     case .failure(let error):
                         uiView.hideToastActivity()
                         print(error)
+                        /// TODO: show error toast
                         self.didIdentify(false)
                 }
             }

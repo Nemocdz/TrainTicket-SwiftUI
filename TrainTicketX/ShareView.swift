@@ -12,14 +12,12 @@ import UIKit
 struct ShareView {
 }
 
-
 extension ShareView: UIViewControllerRepresentable {
     func makeUIViewController(context: UIViewControllerRepresentableContext<ShareView>) -> UIActivityViewController {
         UIActivityViewController(activityItems: [], applicationActivities: nil)
     }
     
     func updateUIViewController(_ uiViewController: UIActivityViewController, context: UIViewControllerRepresentableContext<ShareView>) {
-        
     }
 }
 

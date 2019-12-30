@@ -17,9 +17,6 @@ struct TicketRootView: View {
             List(dataCenter.tickets) {
                 TicketInfoRow(ticket: $0)
             }
-            .onAppear {
-                //UITableView.appearance().separatorColor = .clear
-            }
             .navigationBarTitle("票夹")
             .navigationBarItems(trailing:
                 Button(action: {

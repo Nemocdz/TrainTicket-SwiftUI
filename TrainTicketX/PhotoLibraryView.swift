@@ -53,21 +53,20 @@ extension PhotoLibraryView.Coordinator: UIImagePickerControllerDelegate {
                 .sink(receiveCompletion: { error in
                     picker.view.hideToastActivity()
                     print(error)
-                    //self.didIdentify(false)
+                    /// TODO: show error toast
             }) { ticket in
                 picker.view.hideToastActivity()
                 DataCenter.shared.tickets.append(ticket)
                 self.didIdentify(true)
             }
         } else {
-            /// TODO: showToast
             picker.view.hideToastActivity()
+            ///TODO: show error toast
         }
     }
 }
 
 extension PhotoLibraryView.Coordinator: UINavigationControllerDelegate {
-    
 }
 
 
