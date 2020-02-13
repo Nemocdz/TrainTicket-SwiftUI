@@ -20,7 +20,7 @@
 ## Screenshots
 
 ![](https://image-1252104468.cos.ap-guangzhou.myqcloud.com/blog/20200213114748.PNG)
-![](https://image-1252104468.cos.ap-guangzhou.myqcloud.com/blog/20200213114750.PNG)
+![](https://image-1252104468.cos.ap-guangzhou.myqcloud.com/blog/20200213121021.png)
 ![](https://image-1252104468.cos.ap-guangzhou.myqcloud.com/blog/20200213114749.PNG)
 
 ## Article
